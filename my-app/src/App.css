@@ -1,0 +1,623 @@
+* {
+  box-sizing: border-box;
+}
+html{
+  color: black;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  }
+
+body{
+  background-color: #eeebe6f3;
+  margin: 0;
+}
+
+header{
+  background-color: whitesmoke;
+  width: 100%;
+}
+
+
+#conteiner{
+      display: flexbox;
+      background-color: whitesmoke;
+      
+}
+  
+p:hover{
+ font-weight: bold;
+}
+
+.descripcion-producto:hover{
+font-weight: normal;
+}
+
+.titulo{
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 22px;
+
+  justify-content: space-between;
+  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid black;
+  align-items: center;
+}
+
+
+.titulo img{
+  float: right;
+  width: 30%;
+  height: 30%;
+}
+    
+.titulo h1{
+  padding-left: 5px;   
+  font-size: 150%;
+}
+
+
+
+#logo{
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     border: 2px solid black;
+     margin-right: 7px;
+  }
+  
+a {
+      text-decoration: none; 
+      color: rgb(55, 55, 55); 
+     
+  }
+
+#menu{
+  display: flexbox;
+  color: grey;
+  background-color: whitesmoke; 
+  
+}
+
+
+#menu a{
+display: grid;
+border: 2px solid black;
+padding:10px;
+
+}
+
+#barra_nav{
+  text-align: center;
+  
+ 
+  }
+
+#menu a:hover{
+  color: black;
+  box-shadow: 0px 20px 15px rgba(0,0,0,0.20);
+  
+
+}
+
+
+#barra_nav{
+  display: flexbox;
+  
+
+}
+
+#foot{
+  display: flexbox;
+  color: rgb(60, 54, 54);
+  justify-content: center;
+  width: max-content;
+  padding-bottom: 5px;
+
+}
+
+#foot li{
+  list-style: none;
+}
+
+#foot-secc{
+ padding-bottom: 10px;
+}
+
+#footer{
+  color: rgb(51, 47, 47);
+  font-weight: bold;
+  font-size: 10px;
+  margin: 15px;
+}
+
+footer h4{
+  text-align: left;
+  margin: 15px;   
+}
+
+footer{
+  justify-content: center;
+  align-items: center;
+  display: flexbox;
+  background-color: whitesmoke;
+ min-width: 420px;
+  height: fit-content;
+  padding: 23px;
+  margin-top: 60px;
+}
+
+.ult_nov{
+  text-align: center;
+  padding: 30px; 
+  font-size: 40px;
+}
+
+
+main{
+  min-width: 100%;
+}
+
+.secc{
+  text-align: left;
+  padding: 40px; 
+  margin-top: 20px;
+  font-size: 26px;
+}
+
+#secciones{
+ display: flexbox;
+ padding: 30px;
+}
+
+.productos{
+  display: flexbox;
+}
+
+
+.producto_category{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60% 40%;
+  padding: 60px;
+}
+
+
+
+.remera-hombre{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60% 40%;
+  padding: 60px;
+}
+
+.remera-mujer{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60% 40%;
+  padding: 60px;
+}
+
+
+.accesorios{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60% 40%;
+  padding: 60px;
+}
+
+
+.descripcion-producto{
+font-size: small;
+max-height: 100%; 
+overflow: hidden;
+}
+
+
+.producto_category:hover, .remera-hombre:hover, .remera-mujer:hover, .accesorios:hover{
+  transform: scale(1,1.07);
+  box-shadow: 19px 10px 7px rgba(0,0,0,0.20);
+  transition: all 0.5s;
+}
+
+
+
+
+#botones{
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+#boton{
+background-color: whitesmoke;
+font-family:"Lato", sans-serif;
+font-style: normal;
+}
+
+#boton:hover{
+  box-shadow: 0px 20px 15px rgba(0,0,0,0.20);
+  font-weight: bold;
+}
+
+
+.producto_category img,
+.remera-hombre img,
+.remera-mujer img,
+.accesorios img {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+
+
+
+.saludo {
+  text-align: center;
+}
+
+.link-logout {
+  text-align: center;
+  text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+  
+  header{
+      min-width: 100vw;
+  }
+
+  .titulo{
+      font-family: "Lato", sans-serif;
+      font-weight: 900;
+      font-style: normal;
+      font-size: 30px;
+      border: 2px solid black; 
+    }
+
+  #logo{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid black;
+     margin-right: 30px;
+   }
+
+   #menu{
+      display: flex;
+      justify-content: space-around; /* Distribuye los elementos equitativamente */
+      width: 100%; /* Ocupa todo el ancho disponible */
+      padding: 0; /* Elimina el padding para que los elementos ocupen todo el ancho */
+      box-sizing: border-box;
+  }
+
+  #menu a {
+      flex:1;
+      box-sizing: border-box;
+  }
+
+  #menu p{
+      text-align: center;
+  }
+  
+
+  footer {
+      min-width: 100vw;
+      height: max-content;
+  }
+
+  #foot {
+      display: flex;
+      margin: 15px;
+      width: max-content;
+  }
+
+  footer h4 {
+      text-align: center;   
+  }
+
+  .productos {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+  }
+
+  .producto_category, 
+  .remera-hombre, 
+  .remera-mujer, .accesorios {
+      flex: 1 1 320px; 
+      box-sizing: border-box;
+      overflow: hidden;
+  }
+
+  
+}
+
+
+/*TODO ESTO ES EL INDEX y HEADER Y FOOTER*/
+
+
+.contenedor-login p{
+ font-size: 11px;
+}
+
+
+.contenedor-login{
+  height: 40vh;
+ text-align: center;
+ justify-content: center;
+}
+
+.contenedor-login h2{
+  text-align: center;
+  padding-top: 50px;
+}
+
+.chico-login{
+padding: 10px;
+}
+
+.login-password{
+  padding: 5px;
+  font-weight: bold;
+}
+
+.login-email{
+  padding: 5px;
+  font-weight: bold;
+}
+
+.login-ingresar{
+  margin-top: 10px;
+  background-color: whitesmoke;
+  font-family:"Lato", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.acciones{
+  padding: 15px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.botones-acciones{
+  padding-top: 10px;
+}
+
+
+/*TODO ESTO ES EL LOGIN*/
+/* NO NECESITA QUE SEA ADAPTATIVE*/
+
+
+/* Cart:*/
+
+.contenedor {
+  display: flex;
+  /*utilizar flexbox*/
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch; /* Estirar las cajas para que tengan la misma altura */
+  /*alinear verticalmete al centro*/
+  justify-content: space-around;
+  /*distribuir el espacio entre los elementos*/
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.bolsaCompra {
+  text-align: center;
+}
+
+.total{
+  order: 2;
+  justify-content: center;
+}
+
+.medio-de-pago {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.medio-de-pago img {
+  width: 30px; /* Tamaño pequeño para las imágenes */
+  margin-right: 15px; /* Espacio entre las imágenes */
+  padding: 5px;
+}
+
+.bolsa_compra{
+  padding: 5px;
+}
+
+.foto-producto{
+  order: 1;
+  display: flex;
+}
+
+.foto-producto img {
+  width: 95%;
+  padding: 10px;
+}
+
+.devoluciones{
+  text-align: center;
+}
+
+@media only screen and (min-width: 1000px) {
+  .contenedor-padre, .contenedor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+  }
+
+  .total, .medio-de-pago, .bolsa_compra {
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .foto-producto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+
+  .foto-producto img {
+      max-width: 100%;
+      height: auto;
+      
+  }
+
+  .detalle {
+      margin-top: 10px;
+  }
+  .total p {
+      font-size: 100px; /* Ajustar el tamaño de fuente */
+      font-weight: bold; /* Hacer el texto más destacado */
+      margin-bottom: 10px; /* Espacio adicional entre los elementos */
+  }
+
+}
+
+/* hasta aca es el cart */
+
+
+.tit { /*Ajusto la seccion de la pagina web*/
+  top: 5%;
+  left: 50%;
+  text-align: center;
+  font-size: 50px;
+}
+
+.imagenes-productos {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/* ARRANCA PRODUCTO:*/
+
+.total p {
+  font-size: 1.3vw;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-transform: none;
+  
+}
+
+.detalle_producto {
+  text-align: justify;
+}
+
+.titulo-producto {
+  font-size: 8vw;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.talles {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.talle {
+  border: 20px black;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 800px;
+  height: 40px;
+  margin: 10px;
+  align-items: center;
+}
+
+.talle:focus {
+  outline: none;
+  background-color: lightgray;
+}
+
+.talle:hover{
+  font-weight: bold;
+}
+
+.foto-producto, .total {
+  flex: 1;
+  margin: 0 10px;
+  max-width: 50%;
+}
+
+.foto-producto {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 750px) {
+  .contenedor_producto {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .secc {
+      text-align: center;
+  }
+
+  .contenedor {
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .total .titulo-producto {
+      font-size: 100%;
+  }
+  
+  .total .detalle_producto {
+      font-size: 80%;
+      text-align: justify;
+  }
+
+  .total .precio {
+      font-size: 100%;
+  }
+
+  .total .opciones_talle {
+      font-size: 80%;
+  }
+
+  .total .descuentos {
+      font-size: 80%;
+  }
+
+  .total .opciones_pagos {
+      font-size: 80%;
+  }
+
+  .total .medio-de-pago img {
+      width: 20%;
+      height: 20%;
+  }
+
+
+}
+
+/* TERMINA PRODUCTO */
