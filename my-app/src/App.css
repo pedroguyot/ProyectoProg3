@@ -79,7 +79,7 @@ a {
   display: flexbox;
   color: grey;
   background-color: whitesmoke; 
-  
+  list-style: none;
 }
 
 

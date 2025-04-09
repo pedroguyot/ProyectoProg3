@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-
+//REVISAR EL CSS DEL FOOTER
 class Footer extends Component {
 
     render() {
         return(
-            <p>Pedro Guyot - Geronimo Tiscornia - Gianfranco Rey</p>
+            <div id="foot">
+                <p id="footer">Pedro Guyot - Geronimo Tiscornia - Gianfranco Rey</p> 
+            </div>
         )
 
     }
