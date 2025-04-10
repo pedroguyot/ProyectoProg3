@@ -26,6 +26,7 @@ function App() {
         <Route path={'/favoritos'} component={Favoritos} />
         <Route path={'/populares'} component={Populares} />
         <Route path={'/cartelera'} component={Cartelera} />
+        <h1>Probando git</h1>
 
         <Route component={NotFound} /> {/* TIENE QUE ESTAR SIEMPRE AL FINAL ESTA RUTA */}
       </Switch>
