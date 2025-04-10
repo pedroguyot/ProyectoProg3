@@ -116,7 +116,7 @@ padding:10px;
   justify-content: center;
   width: max-content;
   padding-bottom: 5px;
-
+  
 }
 
 #foot li{
@@ -132,6 +132,7 @@ padding:10px;
   font-weight: bold;
   font-size: 10px;
   margin: 15px;
+  
 }
 
 footer h4{
@@ -148,6 +149,7 @@ footer{
   height: fit-content;
   padding: 23px;
   margin-top: 60px;
+  
 }
 
 .ult_nov{
