@@ -41,19 +41,20 @@ class Favoritos extends Component {
     eliminarDeFavoritas = (id) => {
         let favoritos = JSON.parse(localStorage.getItem("favoritos"));
         let favoritosActualizadas = favoritos.filter((elm) => elm !== id);
-        localStorage.setItem("favoritos", JSON.stringify(favoritosActualiza))
+        {/*localStorage.setItem("favoritos", JSON.stringify(favoritosActualiza))*/}
     }
     render() {
         return (
             <div >
-                {
+                {/*{
+                     
                     this.state.peloiculasFavs.length > 0
                         ?
                         this.state.peloiculasFavs.map(elm, idx) =>
-                <FVCard data={elm} key={idx + elm.name} />)//hay q hacer el card
-                :
+                 <FVCard data={elm} key={idx + elm.name} />)//hay q hacer el card 
+                : 
                 <h2>Favs</h2>
-                }
+                }*/}
 
             </div>
         )

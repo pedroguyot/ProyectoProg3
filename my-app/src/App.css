@@ -171,8 +171,11 @@ main{
 }
 
 #secciones{
- display: flexbox;
- padding: 30px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 30px;
+  gap: 20px; 
 }
 
 .productos{
