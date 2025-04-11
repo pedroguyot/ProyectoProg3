@@ -10,10 +10,12 @@ class FiltroPelicula extends Component {
 
     manejarSubmit(evento) {
         evento.preventDefault();
+        // PARA VER QUE TERMINA ENVIANDO
+        console.log('Se envió el formulario con:', this.state.valorInput);
     }
 
     controlarInput(evento){
-        console.log('Esto es lo que llega por el evento', evento)
+        // PARA VER QUE AGARRA: console.log('Esto es lo que llega por el evento', evento)
         this.setState({valorInput: evento.target.value})
     }
 
@@ -21,7 +23,9 @@ class FiltroPelicula extends Component {
         return(
             
            <form onSubmit={(evento) => this.manejarSubmit(evento)}>
-            <input onChange={(evento) => this.controlarInput(evento)} value={this.state.valorInput}></input>
+                <label>Buscar una pelicula: </label>
+                <input onChange={(evento) => this.controlarInput(evento)} value={this.state.valorInput}></input>
+                <button type="submit">Buscar</button>
            </form>
             
         )
@@ -29,37 +33,3 @@ class FiltroPelicula extends Component {
 }
 
 export default FiltroPelicula;
-
-{/* 
-    
-class FiltroPelicula extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {valor: ''}
-    }
-
-    evitarSubmit(event) {
-        event.preventDefault(); //Evitamos que se envie el formulario de arranque, y solo cuando querramos.
-    }
-    
-    controlarCambios(event) {
-        this.setState({
-            valor: event.target.value
-        }, () => console.log(event))
-    }
-    
-
-    render() {
-        return(
-            
-            <form onSubmit={(event) => this.evitarSubmit(event)}>
-                <label>Buscar pelicula: </label>
-                <input type='text' onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} />
-                <input type='submit' value='Submit' /> 
-            </form>
-            
-        )
-    }
-}    
-    
-*/}
