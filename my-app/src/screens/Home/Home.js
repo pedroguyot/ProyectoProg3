@@ -12,11 +12,6 @@ class Home extends Component {
         }
     }
 
-    //componentDidMount() TRAER DATA DE LA API
-
-
-
-
     render() {
         return (
             <main>
@@ -34,7 +29,7 @@ class Home extends Component {
                 <div id="secciones">
                     <MasPopulares />
                 </div>
-                <h3 className="secc">Peliculas en cartelera</h3>
+                <h3 className="secc">Peliculas mejor calificadas</h3>
                 <div id="secciones">
                     <EnCartel />
                 </div>

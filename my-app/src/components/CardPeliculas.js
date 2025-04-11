@@ -4,8 +4,13 @@ class CardPeliculas extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            dataPelicula: props.data
+            dataPelicula: props.data,
+            mostrarDescripcion: false
         }
+    }
+
+    showDescription() {
+        this.setState({mostrarDescripcion: !this.state.mostrarDescripcion})
     }
 
     render() {
@@ -19,8 +24,13 @@ class CardPeliculas extends Component {
                             </a>
                             <div className="info">
                                 <p className="nombre-producto">{this.state.dataPelicula.original_title}</p>
-                                <button id="boton">Ver descripción</button>
-                                <p className="descripcion-producto">{this.state.dataPelicula.overview}</p>
+                                
+                                <p className='more' onClick={() => this.showDescription()}> {this.state.mostrarDescripcion ? 'Ocultar Descripción' : 'Ver descripción'} </p>
+
+                                <section className={this.state.mostrarDescripcion ? 'show' : 'hide'}>
+                                    <p className="descripcion-producto">{this.state.dataPelicula.overview}</p>
+                                </section>
+                                    
                                 <button id="boton">Ir a detalle</button> <br></br>
                                 <button id="boton">Agregar a favoritos</button>
                             </div>

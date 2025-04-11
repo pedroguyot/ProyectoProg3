@@ -271,6 +271,13 @@ font-style: normal;
   text-decoration: underline;
 }
 
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+
 @media (min-width: 1024px) {
   
   header{

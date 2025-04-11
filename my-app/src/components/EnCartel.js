@@ -10,7 +10,7 @@ class EnCartel extends Component {
     }
 
     componentDidMount(){
-        fetch('https://api.themoviedb.org/3/discover/movie?api_key=2e0ef69342c52cb11393cc8472403ddb&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte={min_date}&release_date.lte={max_date}')
+        fetch('https://api.themoviedb.org/3/discover/movie?api_key=2e0ef69342c52cb11393cc8472403ddb&include_adult=false&include_video=false&language=en-US&page=1&sort_by=vote_average.desc&without_genres=99,10755&vote_count.gte=200')
         .then((response) => response.json())
         .then((data) => this.setState({peliculas:data.results}))
         .catch((error) => console.log(error))
