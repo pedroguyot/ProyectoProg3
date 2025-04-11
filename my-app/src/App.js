@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 //IMPORTS DE SCREENS
 import Home from './screens/Home/Home';
 import AboutUs from './screens/AboutUs/AboutUs';
-import Detalle from './screens/Detalle/Detalle';
+import Resultado from './screens/Resultado/Resultado';
 import Favoritos from './screens/Favoritos/Favoritos';
 import Populares from './screens/Populares/Populares';
 import Cartelera from './screens/Cartelera/Cartelera';
@@ -22,11 +22,11 @@ function App() {
       < Header />
 
       <Switch>
-        <Route path={'/'} exact={true} component={Home}></Route>
+        <Route path={'/'} exact={true} component={Home} />
         <Route path={'/favoritos'} component={Favoritos} />
         <Route path={'/populares'} component={Populares} />
         <Route path={'/cartelera'} component={Cartelera} />
-        <h1>Probando git</h1>
+        <Route path={'/resultado/:busqueda'} component={Resultado} />
 
         <Route component={NotFound} /> {/* TIENE QUE ESTAR SIEMPRE AL FINAL ESTA RUTA */}
       </Switch>

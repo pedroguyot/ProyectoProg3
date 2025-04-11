@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import FiltroPelicula from '../../components/FiltroPelicula';
 import MasPopulares from '../../components/MasPopulares.js';
 import EnCartel from "../../components/EnCartel.js";
+import Buscador from "../../components/Buscador/Buscador.js";
 import { Link } from "react-router-dom";
 
 class Home extends Component {
@@ -20,6 +21,7 @@ class Home extends Component {
                     <h3 className="saludo">Bienvenido</h3>
                 </div>
                 <FiltroPelicula />
+                <Buscador history={this.props.history}/>
                 <div>
 
                     <h2 className="ult_nov">Peliculas</h2>
