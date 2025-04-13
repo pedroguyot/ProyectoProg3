@@ -10,10 +10,13 @@ import Favoritos from './screens/Favoritos/Favoritos';
 import Populares from './screens/Populares/Populares';
 import Cartelera from './screens/Cartelera/Cartelera';
 import NotFound from './screens/NotFound/NotFound';
+import Detalle from './screens/Detalle/Detalle';
 
 //IMPORTS DE COMPONENTS
 import Header from './components/Header';
 import Footer from './components/Footer';
+
+
 
 
 function App() {
@@ -27,6 +30,7 @@ function App() {
         <Route path={'/populares'} component={Populares} />
         <Route path={'/cartelera'} component={Cartelera} />
         <Route path={'/resultado/:busqueda'} component={Resultado} />
+        <Route path={'/detalle/:id'} component={Detalle} />
 
         <Route component={NotFound} /> {/* TIENE QUE ESTAR SIEMPRE AL FINAL ESTA RUTA */}
       </Switch>
