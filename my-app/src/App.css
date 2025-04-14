@@ -321,12 +321,14 @@ font-style: normal;
   footer {
       min-width: 100vw;
       height: max-content;
+     
   }
 
   #foot {
       display: flex;
       margin: 15px;
       width: max-content;
+     
   }
 
   footer h4 {

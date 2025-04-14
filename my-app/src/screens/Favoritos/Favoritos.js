@@ -28,13 +28,13 @@ class Favoritos extends Component {
                 )
                     .then((data) =>
                         this.setState({
-                            peloiculasFavs: data,
+                            peliculasFavs: data,
                             hayElementosEnFavs: true
                         })
                     )
                     .catch(e => console.log(e))
 
-                 console.log("favsParseadArray", favoritosParsedo)
+                console.log("favsParseadArray", favoritosParsedo)
             }
         }
     }
@@ -53,37 +53,24 @@ class Favoritos extends Component {
     render() {
         return (
             <div>
-            {
-                this.state.peliculasFavs.length > 0 
-                ?
-                this.state.peliculasFavs.map((elm, idx)=> 
-                    <CardPeliculas 
-                        data={elm} 
-                        key={idx + elm.name} 
-                        borrarFavs={(id)=> this.eliminarDeFavoritas(id)} 
-                    />)
-                :
-                this.state.hayElementosEnFavs === false ? 
-                    <h1>El carrito esta vacio</h1>
-                :
-                <h1>
-                    Cargando Carrito
-                </h1>
-            }
-        </div>
-            
-            
-            
-            /*<div>
-                
-                {this.state.peliculasFavs.length > 0 ? (
-                    this.state.peliculasFavs.map((elm, idx) => (
-                        <CardPeliculas key={idx + elm.id} data={elm} />
-                    ))
-                ) : (
-                    <h2>No tenés películas en favoritos</h2>
-                )}
-            </div> */
+                {
+                    this.state.peliculasFavs.length > 0
+                        ?
+                        this.state.peliculasFavs.map((elm, idx) =>
+                            <CardPeliculas
+                                data={elm}
+                                key={idx + elm.name}
+                                borrarFavs={(id) => this.eliminarDeFavoritas(id)}
+                            />)
+                        :
+                        this.state.hayElementosEnFavs === false ?
+                            <h1>No tienes favoritos</h1>
+                            :
+                            <h1>
+                                Cargando Favoritos...
+                            </h1>
+                }
+            </div>
         );
     }
 }
