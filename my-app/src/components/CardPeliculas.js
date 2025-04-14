@@ -14,6 +14,22 @@ class CardPeliculas extends Component {
     this.setState({ mostrarDescripcion: !this.state.mostrarDescripcion });
   }
 
+  agregarFavoritos = () => {
+    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    let idActual = this.state.dataPelicula.id;
+    
+    let existe = favoritos.find((id) => id === idActual);
+
+    if (!existe) {
+      favoritos.push(idActual)
+      localStorage.setItem("favoritos", JSON.stringify(favoritos));
+      console.log(idActual)
+    } else {
+      console.log("ya esta guardado")
+    }
+
+  }
+
   render() {
     return (
       <div>
@@ -50,7 +66,7 @@ class CardPeliculas extends Component {
                 <Link to={`/detalle/${this.state.dataPelicula.id}`}>
                   <button id="boton">Ir a detalle</button>
                 </Link>
-                <button id="boton">Agregar a favoritos</button>
+                <button id="boton" onClick={this.agregarFavoritos}>Agregar a favoritos</button>
               </div>
             </div>
           </div>
