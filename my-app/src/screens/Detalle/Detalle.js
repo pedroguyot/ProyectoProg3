@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PeliculaDetalle from '../../components/PeliculaDetalle';
+import Cargando from '../../components/Cargando';
 
 
 class Detalle extends Component {
@@ -7,6 +8,8 @@ class Detalle extends Component {
       super(props);
       this.state = {
         movie: null,
+        cargando: true,
+
       };
     }
   
@@ -21,6 +24,15 @@ class Detalle extends Component {
     }
   
     render() {
+        if (this.state.cargando) {
+            return (
+                <>  
+                <main>
+                    <Cargando></Cargando>
+                </main>
+                </>
+            );
+        };
       const { movie } = this.state;
   
       return (
