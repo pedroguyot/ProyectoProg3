@@ -20,7 +20,6 @@ class Home extends Component {
                 <div>
                     <h3 className="saludo">Bienvenido</h3>
                 </div>
-                <FiltroPelicula />
                 <Buscador history={this.props.history}/>
                 <div>
 
