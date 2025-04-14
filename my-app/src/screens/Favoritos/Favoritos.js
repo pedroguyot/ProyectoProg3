@@ -39,7 +39,6 @@ class Favoritos extends Component {
         }
     }
 
-    //Funcion para eliminar una pelicula del localStorage y del estado
     eliminarDeFavoritas = (id) => {
         let favoritos = JSON.parse(localStorage.getItem("favoritos"));
         let favoritosActualizados = favoritos.filter((elm) => elm !== id);
@@ -52,7 +51,7 @@ class Favoritos extends Component {
 
     render() {
         return (
-            <div>
+            <div id="menu">
                 {
                     this.state.peliculasFavs.length > 0
                         ?
