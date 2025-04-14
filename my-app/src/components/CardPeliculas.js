@@ -7,11 +7,24 @@ class CardPeliculas extends Component {
     this.state = {
       dataPelicula: props.data,
       mostrarDescripcion: false,
+      favorito: false,
     };
   }
 
   showDescription() {
     this.setState({ mostrarDescripcion: !this.state.mostrarDescripcion });
+  }
+
+  componentDidMount(){
+    let storage= localStorage.getItem('favoritos')
+    if(storage !== null){
+      let storageParseado = JSON.parse(storage)
+      let estaMiId = storageParseado.includes(this.state.dataPelicula.id)
+
+      if(estaMiId){
+        this.setState({favorito: true})
+      }
+    }
   }
 
   agregarFavoritos(id){
@@ -32,19 +45,21 @@ class CardPeliculas extends Component {
     })
   }
 
-  quitarFavoritos = () => {
-    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-    let favoritosActualizados = favoritos.filter((id) => id !== this.state.dataPelicula.id);
-
-    localStorage.setItem("favoritos", JSON.stringify(favoritosActualizados));
-
+  quitarFavoritos(id){
+    const storage = localStorage.getItem('favoritos')
+    const storageParseado = JSON.parse(storage)
+    const filtrarStorage = storageParseado.filter((elm) => elm !== id )
+    const storageStringificado = JSON.stringify(filtrarStorage)
+    localStorage.setItem('favoritos', storageStringificado)
     this.setState({
-      esFavorita: false,
-    });
-    if (this.props.borrarFavs) {
-      this.props.borrarFavs(this.state.dataPelicula.id);
+      favorito: false
+    })
+
+    if(this.props.quitarFavoritos !== undefined){
+      this.props.quitarFavoritos(id)
     }
-  };
+
+  }
 
   render() {
     return (
