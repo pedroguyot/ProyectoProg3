@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import CardPeliculas from '../../components/CardPeliculas';
-
+import Cargando from "../../components/Cargando";
 
 class Favoritos extends Component {
     constructor(props) {
         super(props)
         this.state = {
             peliculasFavs: [],
-            hayElementosEnFavs: false
+            hayElementosEnFavs: false,
+            cargando: true,
         };
-    }
+    };
 
     componentDidMount() {
         const storageFavoritos = localStorage.getItem('favoritos');
@@ -28,7 +29,8 @@ class Favoritos extends Component {
                     .then((data) =>
                         this.setState({
                             peliculasFavs: data,
-                            hayElementosEnFavs: true
+                            hayElementosEnFavs: true,
+                            cargando: false,
                         })
                     )
                     .catch(e => console.log(e))
@@ -47,6 +49,15 @@ class Favoritos extends Component {
 
 
     render() {
+        if (this.state.cargando) {
+            return (
+                <>  
+                <main>
+                    <Cargando></Cargando>
+                </main>
+                </>
+            );
+        };
         return (
             <div id="menu">
                 {

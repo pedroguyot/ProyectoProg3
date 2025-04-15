@@ -16,6 +16,7 @@ class Home extends Component {
 
     render() {
         return (
+
             <main>
                 <div>
                     <h3 className="saludo">Bienvenido</h3>
