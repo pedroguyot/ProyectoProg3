@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 
 //IMPORTS DE SCREENS
 import Home from './screens/Home/Home';
-import AboutUs from './screens/AboutUs/AboutUs';
 import Resultado from './screens/Resultado/Resultado';
 import Favoritos from './screens/Favoritos/Favoritos';
 import Populares from './screens/Populares/Populares';

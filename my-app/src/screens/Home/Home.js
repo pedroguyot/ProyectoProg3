@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import FiltroPelicula from '../../components/FiltroPelicula';
 import MasPopulares from '../../components/MasPopulares.js';
 import EnCartel from "../../components/EnCartel.js";
 import Buscador from "../../components/Buscador/Buscador.js";

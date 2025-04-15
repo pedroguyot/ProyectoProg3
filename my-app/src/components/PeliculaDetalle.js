@@ -3,9 +3,10 @@ import React from 'react';
 function PeliculaDetalle({ movie }) {
     if (!movie) return <p>Cargando...</p>
   return (
-    <div>
+    <div className='seccionPeliculaDetalle'>
+      <div >
       <h2>{movie.title}</h2>
-      <img
+      <img className='imagenDetalle'
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
       />
@@ -15,6 +16,7 @@ function PeliculaDetalle({ movie }) {
         <p>Sinopsis: {movie.overview}</p>
         <p>Géneros: {movie.genres ? movie.genres.map(genre => genre.name).join(', ') : 'No disponible'}</p>
         <button>Agregar a favoritos</button>
+    </div>
     </div>
   );
 }

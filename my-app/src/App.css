@@ -471,6 +471,23 @@ button {
   text-align: center;
 }
 
+.seccionPeliculaDetalle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+}
+
+.imagenDetalle {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+
 .show{
   display: block;
 }

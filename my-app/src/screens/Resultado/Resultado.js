@@ -28,14 +28,15 @@ export default class Resultados extends Component {
             )
         }
         return (
-            <div>
+            <div className='seccionPeliculas'>
+            <div className='seccion'>
                 Resultados de: {this.state.busqueda}
                 <section>
                     {this.state.resultados.map((pelicula, idx) => (
                         <PeliculaDetalle key={idx} movie={pelicula} />
                     ))}
                 </section>
-
+                    </div>
             </div>
         )
     }
