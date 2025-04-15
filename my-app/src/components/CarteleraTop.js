@@ -4,13 +4,13 @@ import Cargando from './Cargando';
 import VerMas from './VerMas';
 
 
-class PopularesCartelera extends Component {
+class CarteleraTop extends Component {
   constructor(props) {
     super(props);
     this.state = {
       peliculas: [],
       cargando: true,
-      vermas : false, 
+      MostrarMas: 5, 
 
     };
   }
@@ -29,41 +29,46 @@ class PopularesCartelera extends Component {
       });
   }
 
-  botonVerMas = () => {
-    this.setState({ vermas: true });
+  MostrarMasPeliculas = () => {
+    this.setState((prevState) => ({
+      MostrarMas: prevState.MostrarMas + 5,
+    }));
   };
 
   render() {
-
     if (this.state.cargando) {
-        return (
-          <main>
-            <Cargando></Cargando>
-          </main>
-        );
-      }
-    const { peliculas, vermas } = this.state;
-    const MostrarMas = vermas ? peliculas : peliculas.slice(0, 5);
+      return (
+        <main>
+          <Cargando></Cargando>
+        </main>
+      );}
+    const { peliculas, MostrarMas } = this.state;
 
     return (
-        <div>
+      <div>
         <h1>Películas Populares</h1>
-        {MostrarMas.map((pelicula) => (
-          <div key={pelicula.id}>
-            <img
-              src={`https://image.tmdb.org/t/p/w200${pelicula.poster_path}`}
-              alt={pelicula.title}
-            />
-            <h3>{pelicula.title}</h3>
-            <p>Rating: {pelicula.vote_average}</p>
-          </div>
-        ))}
-        {!vermas && (
-          <VerMas onClick={this.botonVerMas} />
+        {peliculas.map((pelicula, index) => {
+          if (index < MostrarMas) {
+            return (
+              <div key={pelicula.id}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w200${pelicula.poster_path}`}
+                  alt={pelicula.title}
+                />
+                <h3>{pelicula.title}</h3>
+                <p>Rating: {pelicula.vote_average}</p>
+              </div>
+            );
+          }
+          return null;
+        })}
+
+        {MostrarMas < peliculas.length && (
+          <VerMas onClick={this.MostrarMasPeliculas} />
         )}
       </div>
     );
   }
 }
 
-export default PopularesCartelera;
+export default CarteleraTop;

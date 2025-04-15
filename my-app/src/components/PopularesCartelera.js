@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Cargando from './Cargando';
-import VerMas from './VerMas';
+import React, { Component } from "react";
+import Cargando from "./Cargando";
+import VerMas from "./VerMas";
 
 class PopularesCartelera extends Component {
   constructor(props) {
@@ -8,12 +8,14 @@ class PopularesCartelera extends Component {
     this.state = {
       peliculas: [],
       cargando: true,
-      vermas: false,
+      MostrarMas: 5,
     };
   }
 
   componentDidMount() {
-    fetch('https://api.themoviedb.org/3/movie/popular?api_key=2e0ef69342c52cb11393cc8472403ddb&')
+    fetch(
+      "https://api.themoviedb.org/3/movie/popular?api_key=2e0ef69342c52cb11393cc8472403ddb&"
+    )
       .then((res) => res.json())
       .then((data) => {
         this.setState({
@@ -25,9 +27,10 @@ class PopularesCartelera extends Component {
         this.setState({ cargando: false });
       });
   }
-
-  botonVerMas = () => {
-    this.setState({ vermas: true });
+  MostrarMasPeliculas = () => {
+    this.setState((prevState) => ({
+      MostrarMas: prevState.MostrarMas + 5,
+    }));
   };
 
   render() {
@@ -36,27 +39,30 @@ class PopularesCartelera extends Component {
         <main>
           <Cargando></Cargando>
         </main>
-      );
-    }
-
-    const { peliculas, vermas } = this.state;
-    const MostrarMas = vermas ? peliculas : peliculas.slice(0, 5);
+      );}
+    const { peliculas, MostrarMas } = this.state;
 
     return (
       <div>
         <h1>Películas Populares</h1>
-        {MostrarMas.map((pelicula) => (
-          <div key={pelicula.id}>
-            <img
-              src={`https://image.tmdb.org/t/p/w200${pelicula.poster_path}`}
-              alt={pelicula.title}
-            />
-            <h3>{pelicula.title}</h3>
-            <p>Rating: {pelicula.vote_average}</p>
-          </div>
-        ))}
-        {!vermas && (
-          <VerMas onClick={this.botonVerMas} />
+        {peliculas.map((pelicula, index) => {
+          if (index < MostrarMas) {
+            return (
+              <div key={pelicula.id}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w200${pelicula.poster_path}`}
+                  alt={pelicula.title}
+                />
+                <h3>{pelicula.title}</h3>
+                <p>Rating: {pelicula.vote_average}</p>
+              </div>
+            );
+          }
+          return null;
+        })}
+
+        {MostrarMas < peliculas.length && (
+          <VerMas onClick={this.MostrarMasPeliculas} />
         )}
       </div>
     );
@@ -64,6 +70,3 @@ class PopularesCartelera extends Component {
 }
 
 export default PopularesCartelera;
-
-
-
