@@ -20,16 +20,14 @@ class MasPopulares extends Component {
 
     render() {
         return (
-            this.state.peliculas.length === 0 ?
+                this.state.peliculas.length === 0 ?
                 <h4>Cargando peliculas...</h4>
                 :
                 this.state.peliculas.map((elem, indx) => {
                     if (indx < 5) {
                         return <CardPeliculas data={elem} key={indx} />
                     }
-                })
-
-        );
+                }))
 
     }
 }

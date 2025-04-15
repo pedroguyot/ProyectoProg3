@@ -86,6 +86,8 @@ class CardPeliculas extends Component {
                     : "Ver descripción"}{" "}
                 </p>
 
+                <div className="linea-separadora"></div>
+
                 <section
                   className={this.state.mostrarDescripcion ? "show" : "hide"}
                 >
@@ -95,13 +97,13 @@ class CardPeliculas extends Component {
                 </section>
 
                 <Link to={`/detalle/${this.state.dataPelicula.id}`}>
-                  <button id="boton">Ir a detalle</button>
+                  <button className="botonCard">Ir a detalle</button>
                 </Link>
                 {
                   this.state.favorito ?
-                    <button onClick={() => this.quitarFavoritos(this.state.dataPelicula.id)}>Sacar de favoritos</button>
+                    <button className='botonCard' onClick={() => this.quitarFavoritos(this.state.dataPelicula.id)}>Sacar de favoritos</button>
                     :
-                    <button onClick={() => this.agregarFavoritos(this.state.dataPelicula.id)}>Agregar a favoritos</button>
+                    <button className='botonCard' onClick={() => this.agregarFavoritos(this.state.dataPelicula.id)}>Agregar a favoritos</button>
                 }
               </div>
             </div>

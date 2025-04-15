@@ -19,27 +19,30 @@ class Home extends Component {
 
             <main>
                 <div>
-                    <h3 className="saludo">Bienvenido</h3>
+                    <h3 className="saludo">Peliculas</h3>
                 </div>
                 <div className="buscador">
                     <Buscador history={this.props.history} />
                 </div>
-                <div>
 
-                    <h2 className="ult_nov">Peliculas</h2>
+                <section className="seccionPeliculas">
+                    <h3 className="tituloSeccion">Peliculas más populares</h3>
+                    <div id="secciones">
+                        <MasPopulares />
+                    </div>
+                    <button className='botonVerMas'><Link to="/populares" exact="true">Ver todas</Link></button>
+                </section>
+                
+                <div className="lineaHome"></div>
 
-                </div>
+                 <section className="seccionPeliculas">
+                    <h3 className="tituloSeccion">Peliculas mejor calificadas</h3>
+                    <div id="secciones">
+                        <EnCartel />
+                    </div>
+                    <button className='botonVerMas'><Link to="/cartelera" exact="true">Ver todas</Link></button>
+                </section>
 
-                <h3 className="secc">Peliculas más populares</h3>
-                <div id="secciones">
-                    <MasPopulares />
-                </div>
-                <button className='botonVerMas'><Link to="/populares" exact="true">Ver todas</Link></button>
-                <h3 className="secc">Peliculas mejor calificadas</h3>
-                <div id="secciones">
-                    <EnCartel />
-                </div>
-                <button className='botonVerMas'><Link to="/cartelera" exact="true">Ver todas</Link></button>
 
 
             </main>

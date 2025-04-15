@@ -4,8 +4,8 @@ class Footer extends Component {
 
     render() {
         return(
-            <div id="foot">
-                <p id="footer">Pedro Guyot - Geronimo Tiscornia - Gianfranco Rey</p> 
+            <div className="footNuevo">
+                <p className="footerNuevo">Pedro Guyot - Geronimo Tiscornia - Gianfranco Rey</p> 
             </div>
         )
 

@@ -59,7 +59,7 @@ class Favoritos extends Component {
             );
         };
         return (
-            <div id="menu">
+            <div id="secciones">
                 {
                     this.state.peliculasFavs.length > 0
                         ?

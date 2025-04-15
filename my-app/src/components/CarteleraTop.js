@@ -45,8 +45,10 @@ class CarteleraTop extends Component {
     const { peliculas, MostrarMas } = this.state;
 
     return (
-      <div>
+      <div className="seccionPeliculas">
         <h1>Películas Populares</h1>
+
+        <div id='seccionParticular'>
         {peliculas.map((pelicula, index) => {
           if (index < MostrarMas) {
             return (
@@ -62,6 +64,7 @@ class CarteleraTop extends Component {
           }
           return null;
         })}
+        </div>
 
         {MostrarMas < peliculas.length && (
           <VerMas onClick={this.MostrarMasPeliculas} />

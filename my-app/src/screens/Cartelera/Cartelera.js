@@ -36,7 +36,8 @@ class Populares extends Component {
     }
   
     return (
-      <div>
+      <div className='seccionPeliculas'>
+      <div className='seccion'>
       {this.state.peliculas.length > 0 ? (
         this.state.peliculas.map((elem, indx) => {
           if (indx < 1) {
@@ -47,6 +48,7 @@ class Populares extends Component {
       ) : (
         <p>No se encontraron películas.</p>
       )}
+      </div>
       </div>
     );
   };
