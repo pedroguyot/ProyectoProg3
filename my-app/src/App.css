@@ -9,7 +9,7 @@ html{
   }
 
 body{
-  background-color: #eeebe6f3;
+  background-color: #f4dab1f3;
   margin: 0;
 }
 
@@ -269,6 +269,16 @@ font-style: normal;
 .link-logout {
   text-align: center;
   text-decoration: underline;
+}
+
+.buscador {
+  display: flex;
+  justify-content: center;
+}
+
+.botonVerMas {
+  display: flex;
+  justify-content: center;
 }
 
 .show{

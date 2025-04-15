@@ -20,7 +20,9 @@ class Home extends Component {
                 <div>
                     <h3 className="saludo">Bienvenido</h3>
                 </div>
-                <Buscador history={this.props.history}/>
+                <div className="buscador">
+                    <Buscador history={this.props.history} />
+                </div>
                 <div>
 
                     <h2 className="ult_nov">Peliculas</h2>
@@ -31,12 +33,13 @@ class Home extends Component {
                 <div id="secciones">
                     <MasPopulares />
                 </div>
-                <p><Link to="/populares" exact="true">Ver todas</Link></p>
+                <button className='botonVerMas'><Link to="/populares" exact="true">Ver todas</Link></button>
                 <h3 className="secc">Peliculas mejor calificadas</h3>
                 <div id="secciones">
                     <EnCartel />
                 </div>
-                <p><Link to="/cartelera" exact="true">Ver todas</Link></p>
+                <button className='botonVerMas'><Link to="/cartelera" exact="true">Ver todas</Link></button>
+
 
             </main>
         )

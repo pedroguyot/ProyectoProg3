@@ -7,7 +7,7 @@ class Header extends Component {
     render() {
         return (
             <header id="barra_nav">
-                <h1> Vaqueritos Peliculas </h1>
+                <h1> Vaqueros Peliculas </h1>
 
                 <nav>
                     <ul id="menu">
