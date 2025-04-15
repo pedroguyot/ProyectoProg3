@@ -16,6 +16,7 @@ class Home extends Component {
 
     render() {
         return (
+
             <main>
                 <div>
                     <h3 className="saludo">Bienvenido</h3>
@@ -31,7 +32,7 @@ class Home extends Component {
                 <div id="secciones">
                     <MasPopulares />
                 </div>
-                <p><Link to="/populares" exact="true">Ver todas</Link></p>
+                <Link to="/populares" exact="true">Ver todas</Link>
                 <h3 className="secc">Peliculas mejor calificadas</h3>
                 <div id="secciones">
                     <EnCartel />
