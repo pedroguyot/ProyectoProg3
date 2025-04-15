@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CardPeliculas from '../../components/CardPeliculas';
 import Cargando from "../../components/Cargando";
 
-
 class Favoritos extends Component {
     constructor(props) {
         super(props)
@@ -41,16 +40,13 @@ class Favoritos extends Component {
         }
     }
 
-    //Funcion para eliminar una pelicula del localStorage y del estado
-    eliminarDeFavoritas = (id) => {
-        let favoritos = JSON.parse(localStorage.getItem("favoritos"));
-        let favoritosActualizados = favoritos.filter((elm) => elm !== id);
-        localStorage.setItem("favoritos", JSON.stringify(favoritosActualizados));
+    filtrarFavoritos(id){
+        const peliculasFiltradas = this.state.peliculasFavs.filter(
+            elm => elm.id !== id
+        )
+        this.setState({peliculasFavs: peliculasFiltradas})
+    }
 
-        this.setState({
-            peliculasFavs: this.state.peliculasFavs.filter((peli) => peli.id !== id),
-        });
-    };
 
     render() {
         if (this.state.cargando) {
@@ -63,7 +59,7 @@ class Favoritos extends Component {
             );
         };
         return (
-            <div>
+            <div id="menu">
                 {
                     this.state.peliculasFavs.length > 0
                         ?
@@ -71,14 +67,14 @@ class Favoritos extends Component {
                             <CardPeliculas
                                 data={elm}
                                 key={idx + elm.name}
-                                borrarFavs={(id) => this.eliminarDeFavoritas(id)}
+                                borrarFavs={(id) => this.filtrarFavoritos(id)}
                             />)
                         :
                         this.state.hayElementosEnFavs === false ?
-                            <h1>No tienes favoritos</h1>
+                            <h1>No tienes peliculas favoritas</h1>
                             :
                             <h1>
-                                Cargando Favoritos...
+                                Cargando peliculas Favoritas...
                             </h1>
                 }
             </div>
